@@ -272,7 +272,8 @@ metric_set <- function(...) {
       c(
         "dynamic_survival_metric",
         "static_survival_metric",
-        "integrated_survival_metric"
+        "integrated_survival_metric",
+        "pronostic_survival_metric"
       )
   ) {
     make_survival_metric_function(fns)
@@ -644,7 +645,8 @@ validate_function_class <- function(fns) {
     "numeric_metric",
     "dynamic_survival_metric",
     "static_survival_metric",
-    "integrated_survival_metric"
+    "integrated_survival_metric",
+    "pronostic_survival_metric"
   )
 
   if (n_unique == 1L) {
@@ -664,7 +666,8 @@ validate_function_class <- function(fns) {
   surv_cls <- c(
     "dynamic_survival_metric",
     "static_survival_metric",
-    "integrated_survival_metric"
+    "integrated_survival_metric",
+    "pronostic_survival_metric"
   )
   if (any(fn_cls_unique %in% surv_cls) && all(fn_cls_unique %in% surv_cls)) {
     return(invisible(fns))
